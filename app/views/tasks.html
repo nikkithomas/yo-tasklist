@@ -1,0 +1,54 @@
+<!--<html ng-app="tasklistApp">
+  <head>
+    
+    <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+    
+  </head>-->
+  <!--<body ng-controller='TasksCtrl'>-->
+    
+
+
+<div class="main">
+    <div class="heading">Current tasks</div>
+
+<div ng-repeat="task in tasks" class="taskOutput">
+  <a href ng-click="taskDone = !taskDone"><input type="checkbox" id="checkbox1" value="complete"/><label for ="checkbox1"></label></a>
+  <a ng-href="" class="eachTask" ng-show="taskDone">{{task.todo}}</a>
+  <a ng-click="deleteTask(task)" class="removeTask">delete</a>
+</div>
+
+
+
+  <form ng-submit="addTask()">
+  <input type="text" ng-model="task.todo" />
+  <input type="text" ng-model="task.priority" />
+  
+  <input type="submit" value="Add Task" />
+</form>
+Tasks:{{tasks}}
+Task:{{task}}
+
+
+
+    <!-- <ul> 
+      <li ng-repeat="message in messages"> -->
+        <!-- exit a message -->
+        <!--<input ng-model="message.text" ng-change="messages.$save(message)" />-->
+        <!-- delete message -->
+        <!--<button ng-click="messages.$remove(message)">X</button>
+      </li>
+    </ul>-->
+    <!-- push a new message into the array -->
+    <!--<form ng-submit="addMessage(newMessageText)">
+      <input ng-model="newMessageText" />
+      <button type="submit">add message</button>
+    </form> 
+  </div>-->
+    
+  </body>
+</html>
+
+    
+
+
