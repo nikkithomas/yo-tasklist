@@ -102,12 +102,23 @@ body {
   width:600px;
   background-color: #cc99cc;
 
+  .eachPriority{
+
+    
+  }
+
+  .addButton{
+    float:right;
+  }
+
     
       
       a.eachTask{
         font-size:28px;
         text-decoration: none;
         color:white;
+
+    
         &:hover{
           text-decoration: none;
         }
@@ -115,10 +126,12 @@ body {
       }
 
       a.removeTask{
-        font-size:18px;
+        font-size:10px;
         text-decoration: none;
         color:black;
         font-weight: bold;
+        float:right;
+        position: absolute;
 
         &:hover{
           text-decoration: underline;
@@ -136,6 +149,11 @@ body {
       padding-top: auto;
       padding-bottom: auto;
       background-color: #660066;
+    .taskRow{
+      text-align: left;
+      font-size:20px;
+    }
+
     }
 
 }

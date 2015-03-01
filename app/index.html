@@ -12,6 +12,8 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     
 
 
@@ -38,12 +40,17 @@
             </button>
 
             <a class="navbar-brand" href="#/">tasklist</a>
+            
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/tasks">Tasks</a></li>            </ul>
+              <li class=""><a href="#/tasks">Tasks</a></li>
+              <li class=""><a href="#/expired-tasks">Task History</a></li>
+
+
+                          </ul>
           </div>
         </div>
       </div>
@@ -96,6 +103,8 @@
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
 
+        <script src="scripts/controllers/expired-tasks.js"></script>
+        <script src="scripts/filters/expired.js"></script>
         <!-- endbuild -->
 
 

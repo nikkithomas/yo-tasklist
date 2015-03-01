@@ -10,22 +10,54 @@
  /* global Firebase */ 
 
  app.controller('TasksCtrl',function($scope, Task){
+  
   $scope.tasks=Task.all;
 
-  $scope.task={todo:'', priority:''};
+
+
+  $scope.completeTask = Task.completeTask;
+
+
+  
+
+$scope.priorityOptions=[
+  {name:'High',id:1},
+  {name:'Medium',id:2},
+  {name:'Low',id:3}
+  ];
+
+$scope.selectedPriority=$scope.priorityOptions[2].id;
+
+
+
+  $scope.task={todo:'', priority:$scope.selectedPriority,isExpired:false,isComplete:false};
+
+  
+  
+
+
 
   $scope.addTask=function(){
     Task.create($scope.task).then(function(){
       
-    $scope.task={todo:'',priority:''};
+    $scope.task={todo:'',priority:$scope.selectedPriority,isComplete:false, isExpired:false};
     });
     };
 
+$scope.selectedPriority=$scope.priorityOptions[2].id;
+
+
+
+
   $scope.deleteTask=function(task){
-    Task.delete(task);
+    Task.delete(task)
+
   };
 
   $scope.taskDone=true;
+
+
+
  
 
  });

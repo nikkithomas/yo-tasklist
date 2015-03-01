@@ -13,6 +13,16 @@ app.factory('Task',function($firebase, FIREBASE_URL){
 
 
 
+    completeTask: function (task) {
+      
+      console.log(task.todo);
+      task.isComplete = true;
+      tasks.$save(task);
+     
+    },
+
+
+
     get: function(taskId){
       return $firebase(ref.child('tasks').child(taskId)).$asObject();
     },

@@ -9,23 +9,47 @@
     
 
 
-<div class="main">
-    <div class="heading">Current tasks</div>
 
-<div ng-repeat="task in tasks" class="taskOutput">
-  <a href ng-click="taskDone = !taskDone"><input type="checkbox" id="checkbox1" value="complete"/><label for ="checkbox1"></label></a>
+<div class="main">
+  
+    <div class="heading" >Current tasks
+       <div class="taskRow">Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Priority</span></div>
+
+
+
+    </div>
+
+<form ng-submit="addTask()">
+  <input type="text" size="35" ng-model="task.todo" />
+  <!--<input type="text" ng-model="task.priority" />-->
+  <select name="" ng-model="task.priority"
+                ng-options="option.id as option.name for option in priorityOptions"></select>
+  
+  <input class="addButton" type="submit" value="Add Task" />
+</form>
+
+<div ng-repeat="task in tasks | expired:false" class="taskOutput">
+  <a ng-click="completeTask(task)"><input type="checkbox" id="checkbox1" value="complete"/><label for ="checkbox1"></label></a>
   <a ng-href="" class="eachTask" ng-show="taskDone">{{task.todo}}</a>
-  <a ng-click="deleteTask(task)" class="removeTask">delete</a>
+  <select name="" ng-model="task.priority" ng-options="option.id as option.name for option in priorityOptions" class="eachPriority"></select>
+
+  <a ng-click="deleteTask(task)" class="removeTask"><i class="fa fa-check-circle-o fa-5x"></i></a>
+
+</tr>
 </div>
 
 
 
-  <form ng-submit="addTask()">
-  <input type="text" ng-model="task.todo" />
-  <input type="text" ng-model="task.priority" />
+
+
+  <!--<form ng-submit="addTask()">-->
+  <!--<input type="text" size="35" ng-model="task.todo" />-->
+  <!--<input type="text" ng-model="task.priority" />-->
+  <!--<select name="" ng-model="task.priority"
+                ng-options="option.id as option.name for option in priorityOptions"></select>
   
-  <input type="submit" value="Add Task" />
-</form>
+  <input class="addButton" type="submit" value="Add Task" />
+</form>-->
 Tasks:{{tasks}}
 Task:{{task}}
 
