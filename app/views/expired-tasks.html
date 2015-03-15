@@ -1,12 +1,37 @@
-<div class="main">
-    <div class="heading">Task History</div>
+<div class="container" id="taskApp">
 
-<div ng-repeat="task in tasks | expired:true| isComplete:true" class="taskOutput">
-  <a ng-href="">{{task.todo}}</a>
-  
+
+
+  <div class="row">
+    <div class="col-md-12" id="heading">Task History</div>
 </div>
 
-<div>
+
+
+
+<div ng-repeat="task in tasks | expired:true" id="taskOutput" class="row">
+
+  <div class="col-md-8">
+  <a ng-href="" class="eachTask" ng-show="taskDone">{{task.todo}}</a>
+</div>
+
+  <div class="col-md-2">
+    <div class="form-group">
+  <select name="" ng-model="task.priority" ng-options="option.id as option.name for option in priorityOptions" id="eachPriority" class="form-control"></select>
+</div>
+</div>
+
+<div class="col-md-2">
+
+  <button name="" class="form-control" ng-click="deleteTask(task)" id="deleteTwo">Delete</button>
+</div>
+
+</tr>
+</div>
+
+
+
+</div>
   
 
 
@@ -18,4 +43,4 @@
     
  
 
-<p>This is the expired-tasks view.</p>
+

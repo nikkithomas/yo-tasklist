@@ -8,70 +8,100 @@
   <!--<body ng-controller='TasksCtrl'>-->
     
 
+<div class="container" id="taskApp">
 
 
-<div class="main">
+  <div class="row">
+    <div class="col-md-12" id="heading">Current Tasks
+  </div>
   
-    <div class="heading" >Current tasks
-       <div class="taskRow">Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Priority</span></div>
-
-
-
+  <div class="row">
+    <div class="col-md-7" id="taskRow">
+       <span class="descrip">Task Description</span>
     </div>
+    <div class="col-md-5" id="taskRow">
 
-<form ng-submit="addTask()">
-  <input type="text" size="35" ng-model="task.todo" />
-  <!--<input type="text" ng-model="task.priority" />-->
-  <select name="" ng-model="task.priority"
-                ng-options="option.id as option.name for option in priorityOptions"></select>
-  
-  <input class="addButton" type="submit" value="Add Task" />
-</form>
+       <span> Select Priority</span>
+  </div>
 
-<div ng-repeat="task in tasks | expired:false" class="taskOutput">
-  <a ng-click="completeTask(task)"><input type="checkbox" id="checkbox1" value="complete"/><label for ="checkbox1"></label></a>
-  <a ng-href="" class="eachTask" ng-show="taskDone">{{task.todo}}</a>
-  <select name="" ng-model="task.priority" ng-options="option.id as option.name for option in priorityOptions" class="eachPriority"></select>
+  </div>
 
-  <a ng-click="deleteTask(task)" class="removeTask"><i class="fa fa-check-circle-o fa-5x"></i></a>
-
-</tr>
 </div>
 
 
 
 
 
-  <!--<form ng-submit="addTask()">-->
-  <!--<input type="text" size="35" ng-model="task.todo" />-->
-  <!--<input type="text" ng-model="task.priority" />-->
-  <!--<select name="" ng-model="task.priority"
-                ng-options="option.id as option.name for option in priorityOptions"></select>
-  
-  <input class="addButton" type="submit" value="Add Task" />
-</form>-->
-Tasks:{{tasks}}
-Task:{{task}}
-
-
-
-    <!-- <ul> 
-      <li ng-repeat="message in messages"> -->
-        <!-- exit a message -->
-        <!--<input ng-model="message.text" ng-change="messages.$save(message)" />-->
-        <!-- delete message -->
-        <!--<button ng-click="messages.$remove(message)">X</button>
-      </li>
-    </ul>-->
-    <!-- push a new message into the array -->
-    <!--<form ng-submit="addMessage(newMessageText)">
-      <input ng-model="newMessageText" />
-      <button type="submit">add message</button>
-    </form> 
-  </div>-->
     
-  </body>
-</html>
+<div class="row">
+<form ng-submit="addTask()">
+  <div class="col-md-7">
+    <div class="input-group">
+  <input type="text" class="form-control" size="45" ng-model="task.todo" placeholder="Enter Task Here"/>
+</div>
+  <!--<input type="text" ng-model="task.priority" />-->
+</div>
+<div class="col-md-2">
+  <div class="form-group">
+  
+  <select name="" ng-model="task.priority"
+                ng-options="option.id as option.name for option in priorityOptions" class="form-control"></select>
+  </div>
+  <div class="col-md-0">
+  </div>
+  
+</div>
+  <div class="col-md-2">
+    <div class="form-group">
+  <input type="submit" value="Add" class="form-control" id="addButton"/>
+</div>
+</div>
+</form>
+</div>
+
+
+
+
+<div ng-repeat="task in tasks | expired:false" id="taskOutput" class="row">
+  <div class="col-md-2"><!--<div class="checkbox"><label>
+  <a ng-click="completeTask(task)"><input type="checkbox" id="checkbox1" value="complete"/></label></a></div>-->
+  <div class="form-group">
+  
+  <button name="" ng-model="task.status"
+                ng-options="option.id as option.name for option in statusOptions" class="form-control" ng-click="completeTask(task)">Complete</button>
+  </div>
+
+</div>
+
+<div class="col-md-5">
+  <a ng-href="" class="eachTask" ng-show="taskDone">{{task.todo}}</a>
+</div>
+
+<div class="col-md-2">
+  <div class="form-group">
+  <select name="" ng-model="task.priority" ng-options="option.id as option.name for option in priorityOptions" id="eachPriority" class="form-control"></select>
+</div>
+</div>
+
+<div class="col-md-2">
+  <button name="" class="form-control" ng-click="deleteTask(task)" id="delete">Delete</button>
+</div>
+
+</div>
+
+
+
+
+
+<!--Tasks:{{tasks}}
+Task:{{task}}-->
+
+</div>
+
+
+
+  
+ 
 
     
 

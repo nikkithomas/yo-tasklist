@@ -93,30 +93,30 @@ body {
 
 //*Everthing I added to the style of the tasklistApp
 
-.main{
-  position: relative;
-  border: 2px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  height:600px;
-  width:600px;
-  background-color: #cc99cc;
+#taskApp{
+  background-color:#c7d0d5;
 
-  .eachPriority{
+}
+.container{
+  
+ 
 
-    
-  }
 
-  .addButton{
-    float:right;
+
+
+  #addButton{
+    margin-left: 65px;
   }
 
     
       
       a.eachTask{
-        font-size:28px;
+        font-size:22px;
         text-decoration: none;
-        color:white;
+        color: black;
+      
+        font-family: Helvetica;
+
 
     
         &:hover{
@@ -125,35 +125,44 @@ body {
         
       }
 
-      a.removeTask{
-        font-size:10px;
-        text-decoration: none;
-        color:black;
-        font-weight: bold;
-        float:right;
-        position: absolute;
-
-        &:hover{
-          text-decoration: underline;
-        }
-
-      }
+     
     
-    .heading{
-      width: 100%;
-      border: 2px solid black;
+    #heading{
       height: 90px;
-      color: white;
       text-align: center;
       font-size: 40px;
-      padding-top: auto;
-      padding-bottom: auto;
-      background-color: #660066;
-    .taskRow{
-      text-align: left;
-      font-size:20px;
+      
+      color: white;
+      background-color:#93B1c6;
+    
+    
+
+   
     }
 
+    #taskRow{
+      font-size: 20px;
+      color: black;
+
     }
+
+   .descrip{
+    margin-left: 15px;
+
+   } 
+
+  #margin-top: 0px;
+   
+   #delete{
+    margin-left: 65px;
+    border: 2px solid #FF7148;
+    text-transform: uppercase;
+   }
+
+   #deleteTwo{
+    border: 2px solid #FF7148;
+    text-transform: uppercase;
+
+   }
 
 }

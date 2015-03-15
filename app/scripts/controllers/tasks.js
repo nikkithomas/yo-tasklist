@@ -10,12 +10,19 @@
  /* global Firebase */ 
 
  app.controller('TasksCtrl',function($scope, Task){
+
+
   
   $scope.tasks=Task.all;
 
-
+ 
 
   $scope.completeTask = Task.completeTask;
+  
+
+
+
+  $scope.workTask = Task.workTask;
 
 
   
@@ -28,23 +35,25 @@ $scope.priorityOptions=[
 
 $scope.selectedPriority=$scope.priorityOptions[2].id;
 
+$scope.statusOptions=[
+{name:'Click to Complete',id:0}
+];
 
+$scope.selectedStatus=$scope.statusOptions[0].id;
 
-  $scope.task={todo:'', priority:$scope.selectedPriority,isExpired:false,isComplete:false};
-
-  
-  
-
-
+  $scope.task={todo:'', priority:$scope.selectedPriority,isComplete:false,status:0};
 
   $scope.addTask=function(){
+    $scope.task.createdAt = new Date().getTime();
     Task.create($scope.task).then(function(){
       
-    $scope.task={todo:'',priority:$scope.selectedPriority,isComplete:false, isExpired:false};
+      $scope.task={todo:'',priority:$scope.selectedPriority,isComplete:false,status:0};
     });
     };
 
 $scope.selectedPriority=$scope.priorityOptions[2].id;
+
+$scope.selectedStatus=$scope.statusOptions[0].id;
 
 
 

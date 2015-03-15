@@ -35,8 +35,16 @@ var app=angular
 
       .when('/expired-tasks/', {
         templateUrl: 'views/expired-tasks.html',
-        controller: 'ExpiredTasksCtrl'
+        controller: 'TasksCtrl'
       })
+
+     
+
+    
+
+
+      
+ 
       .otherwise({
         redirectTo: '/tasks'
       });

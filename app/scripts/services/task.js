@@ -11,6 +11,14 @@ app.factory('Task',function($firebase, FIREBASE_URL){
       return tasks.$add(task);
     },
 
+   
+
+    workTask:function(task){
+      console.log(task.do);
+      task.isWork=true;
+      tasks.$save(task);
+    },
+
 
 
     completeTask: function (task) {
@@ -34,3 +42,5 @@ app.factory('Task',function($firebase, FIREBASE_URL){
   };
   return Task;
 });
+
+
